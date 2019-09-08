@@ -1,3 +1,4 @@
+import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,6 +20,9 @@ public class Nasty_Surpirse implements ActionListener {
 
 
 	
+	public static void main(String[] args) {
+		
+	}
 	
 	
 	
@@ -26,33 +30,42 @@ public class Nasty_Surpirse implements ActionListener {
 	
 	
 	
-	
-	
+		
 	 JFrame frame = new JFrame();
 	 JButton button1 = new JButton("Trick!");
 	 JButton button2 = new JButton("Treat!");
 	 JPanel panel = new JPanel();
-	public static void main(String[] args) {
-		
-
-	}
+	
 	public void setup() {
 
 		frame.add(panel);
 		panel.add(button1);
 		panel.add(button2);
-		frame.pack();
+
 		frame.setVisible(true);
 		button1.addActionListener(this);
-		
+		button2.addActionListener(this);
+		frame.setPreferredSize(new Dimension(1000,1000));
+		frame.pack();
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
-		showPictureFromTheInternet("https://ksassets.timeincuk.net/wp/uploads/sites/55/2017/03/Stephen-King-IT-920x584.jpg");
+		
+		if (e.getSource() == button1) { showPictureFromTheInternet("https://ksassets.timeincuk.net/wp/uploads/sites/55/2017/03/Stephen-King-IT-920x584.jpg");
+			
+		}else { showPictureFromTheInternet("https://pbs.twimg.com/profile_images/932073327400644609/Sez347VL.jpg");  }
+	
+	
 	}
 
+	
+	
+	
+	
+	
+	
 	private void showPictureFromTheInternet(String imageUrl) {
 	    try {
 	        URL url = new URL(imageUrl);
