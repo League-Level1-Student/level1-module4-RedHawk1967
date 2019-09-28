@@ -68,7 +68,7 @@ public class Jeopardy implements ActionListener {
 
 		// 9. Use the secondButton variable to hold a button using the createButton
 		// method
-		secondButton = createButton("800");
+		secondButton = createButton("400");
 		// 10. Add the secondButton to the quizPanel
 		quizPanel.add(secondButton);
 		// 11. Add action listeners to the buttons (2 lines of code)
@@ -76,7 +76,7 @@ public class Jeopardy implements ActionListener {
 		secondButton.addActionListener(this);
 		;
 		// 12. Write the code to complete the actionPerformed() method below
-		thirdButton = createButton("400");
+		thirdButton = createButton("800");
 		thirdButton.addActionListener(this);
 		quizPanel.add(thirdButton);
 
@@ -145,7 +145,7 @@ public class Jeopardy implements ActionListener {
 
 		// Remove this temporary message and replace it with a pop-up that asks the user
 		// the question
-		String bob = JOptionPane.showInputDialog("Programing");
+		String bob = JOptionPane.showInputDialog(question);
 
 		// Stop the theme music when they have entered their response. Hint: use the
 		// sound variable
