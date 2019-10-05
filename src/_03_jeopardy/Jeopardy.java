@@ -31,7 +31,8 @@ import javax.swing.JPanel;
 public class Jeopardy implements ActionListener {
 	private JButton firstButton;
 	private JButton secondButton;
-	private JButton thirdButton, fourthButton;
+	private JButton thirdButton;
+	private JButton fourthButton;
 	private JPanel quizPanel;
 
 	int score = 0;
@@ -79,7 +80,10 @@ public class Jeopardy implements ActionListener {
 		thirdButton = createButton("800");
 		thirdButton.addActionListener(this);
 		quizPanel.add(thirdButton);
-
+		
+		fourthButton = createButton("1000");
+		fourthButton.addActionListener(this);
+		quizPanel.add(fourthButton);
 // 13. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
 
 		/*
@@ -114,21 +118,28 @@ public class Jeopardy implements ActionListener {
 		JButton buttonPressed = (JButton) e.getSource();
 		// If the buttonPressed was firstButton
 		if (buttonPressed == firstButton) {
-
+			playJeopardyTheme();
 			// Call the askQuestion() method
-			askQuestion("Programing", "Whats the best use of time", 300);
+			askQuestion("Programing", "Whats the best use of time", 200);
 		}
 		// Complete the code in the askQuestion() method. When you play the game, the
 		// score should change.
 
 		// If the buttonPressed was the secondButton
 		if (buttonPressed == secondButton) {
-			askQuestion("Idle Breakout", "Whats the best game to play", 800);
+			playJeopardyTheme();
+			askQuestion("Idle Breakout", "Whats the best game to play", 400);
 
 		}
 		if (buttonPressed == thirdButton) {
-			askQuestion("Mike", "Who knows all cat facts", 1000);
+			playJeopardyTheme();
+			askQuestion("Mike", "Who knows all cat facts", 800);
 
+		}
+		if (buttonPressed == fourthButton) {
+			playJeopardyTheme();
+			askQuestion("Minecraft", "Whats the best game", 1000);
+		
 		}
 // Call the askQuestion() method with a harder question
 
@@ -141,7 +152,7 @@ public class Jeopardy implements ActionListener {
 
 		// Use the playJeopardyTheme() method to play music while the use thinks of an
 		// answer
-		playJeopardyTheme();
+		
 
 		// Remove this temporary message and replace it with a pop-up that asks the user
 		// the question

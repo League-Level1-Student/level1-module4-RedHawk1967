@@ -1,3 +1,4 @@
+package _01_nasty_surprise;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
