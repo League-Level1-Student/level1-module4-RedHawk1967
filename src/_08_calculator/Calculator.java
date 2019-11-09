@@ -78,7 +78,7 @@ String add2  = text2.getText();
 		String mul1 = text2.getText();
 		int mul2 = Integer.parseInt(mul);
 		int mul3 = Integer.parseInt(mul1);
-		label.setText((mul2*mul3)+"");
+		label.setText(mul2*mul3+"");
 				
 				
 				
@@ -89,7 +89,8 @@ String add2  = text2.getText();
 		String div = text1.getText();
 		String div1 = text2.getText();
 		int div2 = Integer.parseInt(div);
-		
+		int div3 = Integer.parseInt(div1);
+		label.setText(div2/div3+"");
 				
 
 	}
@@ -109,7 +110,9 @@ String add2  = text2.getText();
 	if (button3 == e.getSource()) {
 		multiply();
 	}
-	
+	if (button4 == e.getSource()) {
+		divide();
+	}
 	
 	
 	
