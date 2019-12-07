@@ -1,11 +1,13 @@
 package _11_whack_a_mole;
 
+import java.applet.AudioClip;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
 import java.util.Random;
 
+import javax.swing.JApplet;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -48,13 +50,15 @@ public class Whack_A_Mole implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 
+		
+		
 	whacked++;	
 		JButton pressed = (JButton) e.getSource();
 		if (pressed.getText().equalsIgnoreCase("Mole!")) {
 			jbutton();
 
 			moleswhacked++;
-			
+playSound("molesound.wav");			
 
 		} else {
 			speak("you missed child");
@@ -79,4 +83,10 @@ public class Whack_A_Mole implements ActionListener {
 				+ ((timeAtEnd.getTime() - timeAtStart.getTime()) / 1000.00 / molesWhacked) + " moles per second.");
 	}
 
+	private void playSound(String filename) {
+	     AudioClip sound = JApplet.newAudioClip(getClass().getResource("molesound.wav"));
+	     sound.play();
+	}
+	
+	
 }
