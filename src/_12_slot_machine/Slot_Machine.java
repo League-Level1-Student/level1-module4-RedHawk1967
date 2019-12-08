@@ -1,3 +1,4 @@
+//You forgot to sign out.
 package _12_slot_machine;
 
 import java.applet.AudioClip;
